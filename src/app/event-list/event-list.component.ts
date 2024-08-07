@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event-list',
-  standalone: true,
-  imports: [],
   templateUrl: './event-list.component.html',
-  styleUrl: './event-list.component.css'
+  styleUrls: ['./event-list.component.css']
 })
-export class EventListComponent {
+export class EventListComponent implements OnInit {
+  events = [
+    { id: 1, name: 'Angular Workshop', description: 'A workshop on Angular.' },
+    { id: 2, name: 'React Conference', description: 'A conference about React.' },
+    { id: 3, name: 'Vue Meetup', description: 'A meetup for Vue enthusiasts.' },
+  ];
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }
